@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "d0fe85057da660057ef7",
+    "revision": "ad8fdc410ff08433d5f6",
     "url": "/textutlis/static/css/main.3cbc1e73.chunk.css"
   },
   {
-    "revision": "d0fe85057da660057ef7",
-    "url": "/textutlis/static/js/main.d0fe8505.chunk.js"
+    "revision": "ad8fdc410ff08433d5f6",
+    "url": "/textutlis/static/js/main.ad8fdc41.chunk.js"
   },
   {
     "revision": "444f0bc38a785630c6eb",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/textutlis/static/js/runtime~main.2460f0a7.js"
   },
   {
-    "revision": "cd118610cd9e111f578f39deb8bb1026",
+    "revision": "32ab5e1ba017e1f9ba614c3b87bec426",
     "url": "/textutlis/index.html"
   }
 ];
