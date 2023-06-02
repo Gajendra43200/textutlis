@@ -6,6 +6,7 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
+//nginx  for hosting,deplyoment reactapp 
 
 import {
   BrowserRouter as Router,
@@ -30,14 +31,24 @@ import {
     },3000);
     
   }
-  const toggleMode = ()=>{
+  const removeBodyClasses=()=>{
+    document.body.classList.remove('bg-primary')
+    document.body.classList.remove('bg-light')
+    document.body.classList.remove('bg-danger')
+    document.body.classList.remove('bg-success')
+    document.body.classList.remove('bg-dark')
+  }
+  const toggleMode = (cls)=>{
+    removeBodyClasses();
+    console.log(cls)
+    document.body.classList.add('bg-'+cls);
     if(mode === 'light'){
       setMode('dark');
       document.body.style.backgroundColor = 'grey';
       showAlert("Dark Mode Is Enable", "success");
-      // setInterval(() => {
-      //   document.title = 'TextUtils - Dark Mode';
-      // }, 2000);
+      setInterval(() => {
+        document.title = 'TextUtils - Dark Mode';
+      }, 2000);
       // setInterval(() => {
       //   document.title = 'TextUtils - download  Mode';
       // }, 1500);
@@ -63,14 +74,14 @@ import {
     {/* <TextForm showAlert={showAlert} heading='Enter Here Your Title' mode={mode} /> */}
 {/* NEW VERSION  */}
     <Routes> 
-          <Route  path="/" element={ <TextForm showAlert={showAlert} heading='Enter Here Your Title' mode={mode} />} />
+          <Route  path="/" element={ <TextForm showAlert={showAlert} heading='TextTutlis - Word Counter, Remove Extra Space' mode={mode} />} />
             
           <Route  path="/about" element={<About mode={mode} />} />
      </Routes>
 
 {/* Old version me ye use hota tha */}
     {/* <switch>
-          <Routes path="/about">
+          <Routes exact path="/about">
             <About />
           </Routes>
          
@@ -86,4 +97,4 @@ import {
   );
 }
 
-export default App;
+export default App ;

@@ -10,7 +10,9 @@ export default function Navbar(props) {
     {/* <nav className="navbar navbar-expand-lg navbar-light  bg-light"> color change ho jata he =yha light he fir dark kra */}
   
     <div className="container-fluid">
-    <Link className="navbar-brand" to="/">{props.title}</Link>
+
+    {/* use in react router dom foSSr  move to one page to other page  home to about */}
+    <Link className="navbar-brand" to="/">{props.title}</Link> 
     {/* <a className="navbar-brand" href="#">{props.title}</a> */}
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -29,11 +31,31 @@ export default function Navbar(props) {
       {/* <form className="d-flex" role="search">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
          <button className="btn btn-outline-success" type="submit">Search</button> */}
+
+         <div className="d-flex">
+          {/* //onlick ko ek function chiye hota he fuction call ni chiye hota he */}
+            <div className="bg-primary rounded mx-2" onClick={()=>{props.toggleMode('primary')}} style={{height:"20px", width: '20px', cursor:'pointer'}}></div>
+         </div>
+         <div className="d-flex">
+          {/* //onlick ko ek function chiye hota he fuction call ni chiye hota he */}
+            <div className="bg-light rounded mx-2" onClick={()=>{props.toggleMode('light')}} style={{height:"20px", width: '20px', cursor:'pointer'}}></div>
+         </div>
+         <div className="d-flex">
+            <div className="bg-danger rounded mx-2" onClick={()=>{props.toggleMode('danger')}} style={{height:"20px", width: '20px', cursor:'pointer'}}></div>
+         </div>
+         <div className="d-flex">
+          {/* //onlick ko ek function chiye hota he fuction call ni chiye hota he */}
+            <div className="bg-success rounded mx-2" onClick={()=>{props.toggleMode('success')}} style={{height:"20px", width: '20px', cursor:'pointer'}}></div>
+         </div>
+         <div className="d-flex">
+          {/* //onlick ko ek function chiye hota he fuction call ni chiye hota he */}
+            <div className="bg-dark rounded mx-2" onClick={()=>{props.toggleMode('dark')}} style={{height:"20px", width: '20px', cursor:'pointer'}}></div>
+         </div>
   
 
          <div className={`form-check form-switch text-${props.mode==='light'?'dark':'lihgt'}`}>
-            <input className="form-check-input" onClick={props.toggleMode} type="checkbox"  id="flexSwitchCheckDefault"/>
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">ENABLE DARK MODE</label>
+            <input className="form-check-input" onClick={()=>{props.toggleMode(null)}} type="checkbox"  id="flexSwitchCheckDefault"/>
+            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Toggle Mode</label>
           </div>
          </div>
       </div>
